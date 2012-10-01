@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CompareImageViewController.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    CompareImageViewController *compareImageViewController = [[CompareImageViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:compareImageViewController];
+    [navi setNavigationBarHidden:YES];
+    [self.window setRootViewController:navi];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
